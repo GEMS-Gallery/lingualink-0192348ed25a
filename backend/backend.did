@@ -1,0 +1,12 @@
+type TranslationEntry = 
+ record {
+   id: nat;
+   originalText: text;
+   targetLanguage: text;
+   timestamp: int;
+   translatedText: text;
+ };
+service : {
+  addTranslation: (text, text, text) -> (nat);
+  getTranslations: () -> (vec TranslationEntry) query;
+}
