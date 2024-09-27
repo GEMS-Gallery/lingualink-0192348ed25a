@@ -31,12 +31,16 @@ async function translateText(text, targetLang) {
         'de-DE': {
             'Hello': 'Hallo',
             'How are you?': 'Wie geht es dir?',
-            'Goodbye': 'Auf Wiedersehen'
+            'Goodbye': 'Auf Wiedersehen',
+            'Where is the nearest hotel?': 'Wo ist das nächste Hotel?',
+            'Can you recommend a good restaurant?': 'Können Sie ein gutes Restaurant empfehlen?'
         },
         'es-ES': {
             'Hello': 'Hola',
             'How are you?': '¿Cómo estás?',
-            'Goodbye': 'Adiós'
+            'Goodbye': 'Adiós',
+            'Where is the nearest hotel?': '¿Dónde está el hotel más cercano?',
+            'Can you recommend a good restaurant?': '¿Puede recomendar un buen restaurante?'
         }
     };
 
@@ -54,7 +58,10 @@ async function updateHistory() {
     historyList.innerHTML = '';
     translations.forEach(entry => {
         const li = document.createElement('li');
-        li.textContent = `${entry.originalText} -> ${entry.translatedText} (${entry.targetLanguage})`;
+        li.innerHTML = `<span class="original">${entry.originalText}</span> 
+                        <i class="fas fa-arrow-right"></i> 
+                        <span class="translated">${entry.translatedText}</span> 
+                        <span class="language">(${entry.targetLanguage})</span>`;
         historyList.appendChild(li);
     });
 }

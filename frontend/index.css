@@ -1,59 +1,102 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f8ff; /* Light sky blue */
+    color: #333;
 }
 
 .container {
-    width: 80%;
-    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
     overflow: hidden;
-    padding: 20px;
     background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-h1, h2 {
-    color: #333;
+header {
+    background-color: #4a90e2; /* Bright blue */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+h1 i {
+    margin-right: 10px;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-weight: 300;
+}
+
+main {
+    padding: 2rem;
 }
 
 textarea {
     width: 100%;
     height: 100px;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 select, button {
-    display: block;
-    width: 100%;
+    flex: 1;
     padding: 10px;
-    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+select {
+    background-color: #f0f0f0;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green */
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-#outputText {
+.output-box {
     background-color: #e9e9e9;
-    padding: 10px;
+    padding: 1rem;
     border-radius: 5px;
-    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+.history {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.history h2 {
+    margin-top: 0;
+    color: #4a90e2;
 }
 
 ul {
@@ -62,8 +105,33 @@ ul {
 }
 
 li {
-    background-color: #f9f9f9;
-    margin-bottom: 5px;
-    padding: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 15px;
     border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-2px);
+}
+
+.original {
+    font-weight: bold;
+}
+
+.translated {
+    color: #4a90e2;
+}
+
+.language {
+    font-size: 0.8em;
+    color: #888;
+}
+
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+    }
 }

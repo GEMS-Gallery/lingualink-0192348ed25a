@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text-to-Speech Translator</title>
+    <title>Travel Translator</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Text-to-Speech Translator</h1>
-        <textarea id="inputText" placeholder="Enter English text here"></textarea>
-        <select id="targetLanguage">
-            <option value="de-DE">German</option>
-            <option value="es-ES">Spanish</option>
-        </select>
-        <button id="translateButton">Translate and Speak</button>
-        <div id="outputText"></div>
-        <h2>Translation History</h2>
-        <ul id="historyList"></ul>
+        <header>
+            <h1><i class="fas fa-globe-americas"></i> Travel Translator</h1>
+            <p>Translate and speak your way around the world!</p>
+        </header>
+        <main>
+            <textarea id="inputText" placeholder="Enter your travel phrase in English"></textarea>
+            <div class="controls">
+                <select id="targetLanguage">
+                    <option value="de-DE">German</option>
+                    <option value="es-ES">Spanish</option>
+                </select>
+                <button id="translateButton"><i class="fas fa-language"></i> Translate and Speak</button>
+            </div>
+            <div id="outputText" class="output-box"></div>
+        </main>
+        <section class="history">
+            <h2><i class="fas fa-history"></i> Translation History</h2>
+            <ul id="historyList"></ul>
+        </section>
     </div>
     <script type="module" src="index.js"></script>
 </body>
